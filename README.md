@@ -38,8 +38,8 @@ To use this application, open the integrated terminal and run npm init, then npm
 
 ## Demo   
 
- 
-
+https://user-images.githubusercontent.com/58886869/235379638-80000bc8-873b-4f9f-a136-4a4a9ec5aeab.mp4
+   
 ## Credits   
 University of Arizona Coding Bootcamp resources (activities and lesson examples).    
 
