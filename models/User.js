@@ -14,7 +14,7 @@ const userSchema = new Schema(
             required: true,
             unique: true,
             validate: {
-                validator: function(v) {
+                validator: function (v) {
                     return /^([a-z0-9_.-]+)@([\da-z.-]+).([a-z.]{2,6})$/.test(v);
                 },
                 message: "Please enter a valid email address"
@@ -28,8 +28,8 @@ const userSchema = new Schema(
         ],
         friends: [
             {
-            type: Schema.Types.ObjectId,
-            ref: 'Friends',
+                type: Schema.Types.ObjectId,
+                ref: 'User',
             },
         ],
     },
@@ -44,10 +44,10 @@ const userSchema = new Schema(
 
 // Create a virtual property 'friendCount' that gets the count of friends associated with a user
 userSchema
-.virtual('friendCount')
-.get(function () {
-    return this.friends.length;
-});
+    .virtual('friendCount')
+    .get(function () {
+        return this.friends.length;
+    });
 
 const User = model('user', userSchema);
 

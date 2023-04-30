@@ -9,6 +9,7 @@ module.exports = {
             res.json(thoughts);
         } catch (err) {
             res.status(500).json(err);
+            console.log(err);
         }
     },
 
@@ -103,7 +104,7 @@ module.exports = {
         try {
             const thought = await Thought.findOneAndUpdate(
                 { _id: req.params.thoughtId },
-                { $pull: { reaction: { reactionID: req.params.reactionId } } },
+                { $pull: { reactions: { reactionId: req.params.reactionId } } },
                 { runValidators: true, new: true }
             );
 
